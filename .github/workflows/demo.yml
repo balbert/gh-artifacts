@@ -42,8 +42,8 @@ jobs:
         with:
           name: dist-files
           path:
-            gh-artifacts/dist
-            gh-artifacts/package.json
+            /home/runner/work/gh-artifacts/gh-artifacts/dist
+            /home/runner/work/gh-artifacts/gh-artifacts/package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
