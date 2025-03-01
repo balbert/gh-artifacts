@@ -15,17 +15,6 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
-  check:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Display working directory
-        run: |
-          echo
-          echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-          echo "Working directory: ${PWD}"
-          echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-          echo
   build:
     needs: test
     runs-on: ubuntu-latest
