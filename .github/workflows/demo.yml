@@ -25,6 +25,8 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
+      - name: CHeck it out
+        run: pwd ; ls -lia
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
