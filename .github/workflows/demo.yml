@@ -25,15 +25,13 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-      - name: CHeck it out
-        run: ls -liaR .
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
           path:
-            dist/
-            package.json
+            gh-artifacts/dist
+            gh-artifacts/package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
