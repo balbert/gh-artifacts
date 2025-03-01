@@ -15,7 +15,6 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
-
   check:
     needs: test
     runs-on: ubuntu-latest
@@ -27,18 +26,6 @@ jobs:
           echo "Working directory: ${PWD}"
           echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
           echo
-
-          check:
-            runs-on: ubuntu-latest
-            steps:
-              - name: Display working directory
-                run: |
-                  echo
-                  echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                  echo "Working directory: ${PWD}"
-                  echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                  echo
-        
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -63,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: dist-files
       - name: Output contents
